@@ -41,9 +41,6 @@ $("#submit-button").on("click", function(event) {
 
   var nexttrain = moment().add(minutestill, "minutes");
   var next = moment(nexttrain).format("HH:mm");
-  //   var monthsWorked = Math.floor((Date.now() - new Date(freq)) / 2629746000);
-
-  //   console.log(monthsWorked);
 
   database.ref().push({
     name: name,
@@ -52,7 +49,6 @@ $("#submit-button").on("click", function(event) {
     first: first,
     minutestill: minutestill,
     next: next
-    // dateAdded: firebase.database.ServerValue.TIMESTAMP
   });
 });
 
@@ -83,8 +79,4 @@ database
     $(tr).append("<td>" + response.val().first + "</td>");
     $(tr).append("<td>" + response.val().minutestill + "</td>");
     $(tr).append("<td>" + response.val().next + "</td>");
-
-    // $(tr).append(
-    //   "<td>" + response.val().first * response.val().months + "</td>"
-    // );
   });
