@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Oh is that a train I see?</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+    <style>
+        #wrapper {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="jumbotron jumbotron-fluid" style="background-color:blue">
+            <div class="container" style="color: white; background-color: blue;";>
+                <h1 class="display-4">What Time is it?</h1>
+                <p class="lead">It's train time look out here comes the train</p>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Train Name</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Frequency (min)</th>
+                    <th scope="col">First Arrival</th>
+                    <th scope="col">Minutes Till Next Arrival</th>
+
+                    <th scope="col">Next Arrival</th>
+               
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th class="train-name"></th>
+                    <td class="train-destination"></td>
+                    <th class="train-freq"></th>
+                    <td class="train-start"></td>
+                    <th class="train-arrival"></th>
+                </tr>
+            </tbody>
+        </table>
+        <div class="col-lg-12">
+            <div class="card card-default">
+                <div class="card-header">
+                    Add A choo choo train
+                </div>
+                <div class="card-body">
+                    <!-- Sign-up Form (note the various input "types")-->
+                    <form role="form">
+                        <div class="form-group row">
+                            <label for="name-input">Train Name:</label>
+                            <input class="form-control" id="name-input" type="text" placeholder="Train Name">
+                        </div>
+                        <div class="form-group row">
+                            <label for="role-input">Destination</label>
+                            <input class="form-control" id="destination-input" type="text" placeholder="Destination">
+                        </div>
+                        <div class="form-group row">
+                            <label for="freq-input">Frequency (Min)</label>
+                            <input class="form-control" id="freq-input" type="number" placeholder="Frequency">
+                        </div>
+                <div class="form-group row">
+                    <label for="first-input">First Train Departure(Military Time)</label>
+                    <input class="form-control" id="first-input" type="text" placeholder="First Departure">
+                </div>
+                        <button type="submit" id="submit-button">Submit</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+</body>
+
+</html>
